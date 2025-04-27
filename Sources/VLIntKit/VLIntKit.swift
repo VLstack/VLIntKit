@@ -24,7 +24,7 @@ extension Int
   return String(format: format, hours, minutes)
  }
 
- var asHHmm: String
+ public var asHHmm: String
  {
   let hour = self / 3600
   let minute = self / 60 % 60
@@ -32,7 +32,7 @@ extension Int
   return String(format: "%02i:%02i", hour, minute)
  }
 
- var asHHmmss: String
+ public var asHHmmss: String
  {
   let hour = self / 3600
   let minute = self / 60 % 60
@@ -42,13 +42,13 @@ extension Int
  }
 
  @available(*, deprecated, message: ".minutesFormatted is deprecated, use .toMinutes(compact: true) instead")
- var minutesFormatted: String
+ public var minutesFormatted: String
  {
   self.toMinutes(compact: true)
  }
 
  @available(*, deprecated, message: ".toMinutes(shortFormat:) is deprecated, use .toMinutes(short:) instead")
- func toMinutes(shortFormat: String = "min.") -> String
+ public func toMinutes(shortFormat: String = "min.") -> String
  {
   self.toMinutes(short: shortFormat)
  }
