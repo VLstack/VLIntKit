@@ -47,6 +47,12 @@ extension Int
   self.toMinutes(compact: true)
  }
 
+ public func roundedUp(toMultipleOf step: Int) -> Int
+ {
+   guard step > 0 && self >= 0 else { return self }
+   return ((self + step - 1) / step) * step
+ }
+
  @available(*, deprecated, message: ".toMinutes(shortFormat:) is deprecated, use .toMinutes(short:) instead")
  public func toMinutes(shortFormat: String = "min.") -> String
  {
